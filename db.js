@@ -26,6 +26,7 @@ db.once('open', function(){
 // User Schema 
 
 var userSchema =	new Schema({
+	email:			{type: String, unique: true, required: false},
 	username:		{type: String, unique: true, required: true},
 	password:		{type: String, required: true}
 });

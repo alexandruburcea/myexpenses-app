@@ -1,0 +1,85 @@
+<html>
+<head>
+	<%- include('head') %>
+</head>
+<body class="bg-color">
+	<div class="wrapper">
+		<%- include('nav'); %>
+		<div class="container" id="content">
+			<%- include('nav-button') %>
+			<br>
+			<div style="background:transparent !important;" class="jumbotron jumbotron-fluid">
+				<div class="container">
+					<h2 class="white center text-shadow-black"><span class="montserrat">Balance:</span> €<%= balance.total.toFixed(2) %></h2>
+					<h5 class="white center montserrat text-shadow-black">Username: <%= username %></h5>
+				</div>
+			</div>
+			<div id="accordion">
+  				<div class="card btn-center">
+    				<div class="card-header" id="headingOne">
+      					<h5 class="mb-0">
+        					<button class="black card-btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          						Add Expense
+        					</button>
+      					</h5>
+    				</div>
+
+    				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      					<div class="card-body">
+							<form action="/add-expense" method="POST">
+								<div class="form-group">
+									<input class="form-control" type="text" name="name" placeholder="Expense Name" autocomplete="off"><br>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+    										<span class="input-group-text">€</span>
+  										</div>
+										<input class="form-control" type="number" name="amount" placeholder="Amount" step="any" min="1">
+									</div>
+									<div class="form-group">
+										<label>Category</label>
+										<select multiple class="form-control" name="category">
+  											<option value="food">Food</option>
+  											<option value="gas">Gas</option>
+  											<option value="bill">Bill</option>
+											<option value="fun">Fun</option>
+  											<option value="leisure">Leisure</option>
+											  
+										</select>
+									</div>
+								</div>
+								<button type="submit" class="btn btn-primary btn-center">Submit</button>
+							</form>
+      					</div>
+    				</div>
+  				</div><br>
+  				<div class="card btn-center">
+    				<div class="card-header" id="headingTwo">
+      					<h5 class="mb-0">
+        					<button class="card-btn black" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          						Add to Balance
+        					</button>
+      					</h5>
+    				</div>
+    				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      					<div class="card-body">
+							<form action="/deposit" method="POST">
+								<div class="form-group">
+									<textarea class="form-control" rows="3" name="description" placeholder="Short description [30 character max]"></textarea><br>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text">€</span>
+										</div>
+										<input class="form-control" type="number" name="amount" placeholder="Amount" step="any" min="1">
+									</div>
+									<button class="btn btn-primary btn-center" type="submit">Submit</button>
+								</div>
+							</form>
+      					</div>
+    				</div>
+  				</div>
+			</div>
+		</div>
+	</div>
+	<%- include('js-scripts') %>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+<head>
+<%- include('head') %>
+</head>
+<body class="bg-color">
+<div class="wrapper">
+<%- include('nav'); %>
+<div class="container list-back" id="content">
+<%- include('nav-button'); %>
+<br>
+<h4 class="center"><span class="montserrat">Total:</span> €<%= sum.toFixed(2) %></h4>
+<table class="table table-hover fullWidth">
+<thead class="thead-dark">
+	<tr>
+		<th scope="col">Date</th>
+		<th scope="col">Amount</th>
+		<th scope="col">Description</th>
+		<th scope="col">Cancel</th>
+	</tr>
+</thead>
+<% deposits.forEach(function(deposit){ %>
+	<tr>
+		<td><%= deposit.date.toDateString() %></td>
+		<td>€<%= deposit.amount.toFixed(2) %></td>
+		<td><%= deposit.description.substr(0, 30) %></td>
+		<td><a href="/cancel-deposit/<%= deposit._id %>">Cancel</a></td>
+	</tr>
+<% }); %>
+</table>
+<canvas class="fullWidth" id="myChart"></canvas>
+</div>
+</div>
+<%- include('js-scripts'); %>
+<script>
+	let myChart = document.getElementById('myChart').getContext('2d');
+
+	let depositChart = new Chart(myChart, {
+		type: 'line',
+		data: {
+			labels: [
+				<% deposits.reverse().forEach(function(deposit){ %>
+				'<%= deposit.date.toDateString() %>',
+				<% }); %>
+			],
+			datasets: [{
+				label: 'Deposits',
+				borderColor: '#4286f4',
+				data: [
+					<% deposits.forEach(function(deposit){ %>
+					<%= deposit.amount.toFixed(2) %>,
+					<% }); %>
+				],
+				fill: false
+			}]
+		},
+		options: {
+			responsive: true,
+			title: {
+				display: true,
+				text: 'Deposits over a year'
+			},
+			hover: {
+				mode: 'nearest',
+				intersect: true
+			},
+			scales: {
+				xAxes: [{
+					display: true,
+					scaleLabel: {
+						display: true,
+						labelString: 'Month'
+					}
+				}],
+				yAxes: [{
+					display: true,
+					scaleLabel: {
+						display: true,
+						labelString: 'Amount in dollars'
+					}
+				}]
+			}
+		}
+	});
+</script>
+</body>
+</html>

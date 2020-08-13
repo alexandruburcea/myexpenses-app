@@ -108,11 +108,13 @@ function authenticationMiddleware() {
 
 // to test on local devices ( same network)
 
-http.listen(80, '46.101.150.226');  
+// http.listen(80, '46.101.150.226');  
+
+http.listen(3000, 'localhost');  
 
 
-// http.listen(port, function(){
-// 	console.log(`Listening on port ${port}`);
-// });
+http.listen(port, function(){
+	console.log(`Listening on port ${port}`);
+});
 
 

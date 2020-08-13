@@ -11,8 +11,8 @@ const bcrypt = require('bcryptjs');
 const LocalStrategy = require('passport-local').Strategy;
 const expressValidator = require('express-validator');
 const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
 var bodyParser = require('body-parser');
+const MongoStore = require('connect-mongo')(session);
 
 app.set('view engine', 'ejs');
 
@@ -108,10 +108,10 @@ function authenticationMiddleware() {
 
 // to test on local devices ( same network)
 
-http.listen(80, '46.101.150.226');  
+// http.listen(80, '46.101.150.226');  
 
-// http.listen(port, function(){
-// 	console.log(`Listening on port ${port}`);
-// });
+http.listen(port, function(){
+	console.log(`Listening on port ${port}`);
+});
 
 

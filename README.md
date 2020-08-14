@@ -10,3 +10,10 @@ A user can log in if the account is already created or sign up and create a new 
 Once the user has logged in, they add their initial balance. Afterwards they can start adding
 expenses. The expenses are tracked by date and are also put into a pie chart. 
 More balance / deposit can be entered after succesfuly logged in. 
+
+
+# How to use
+
+git clone the https://github.com/alexandruburcea/myexpenses-app.git
+npm install
+npm run 

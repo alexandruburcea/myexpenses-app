@@ -56,6 +56,7 @@ router.post('/signup', function(req, res, next) {
 		var hash = bcrypt.hashSync(req.body.password, salt);
 		var user = new db.User({
 			username: req.body.username,
+			email: req.body.email,
 			password: hash
 		});
 

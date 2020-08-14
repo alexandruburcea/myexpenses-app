@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
-const port = 3000;
+const port = 80;
 const db = require('./db.js');
 const expenses = require('./controllers/expenses.js');
 const deposits = require('./controllers/deposits.js');
@@ -106,8 +106,9 @@ function authenticationMiddleware() {
 
 // Listen to the port
 
+// http.listen(port, 'localhost');  // for local testing 
 
-http.listen(3000, 'localhost');  
+http.listen(port, '46.101.119.116');  
 
 
 http.listen(port, function(){

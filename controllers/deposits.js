@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db.js');
 
-//  Check to see if the object is empty
+//  Check to see if the object is empty.
 
 function isEmpty(obj) {
 	for(var key in obj) {
@@ -13,7 +13,7 @@ function isEmpty(obj) {
 }
 
 
-// Enter Initial Balance GET Route
+// Enter Initial Balance GET Route.
 
 router.get('/add-balance', authenticationMiddleware(), function(req, res){
 	db.Balance.find({user: req.session.passport.user.username}, function(err, balance){

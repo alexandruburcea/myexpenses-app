@@ -17,7 +17,7 @@ More balance / deposit can be entered after succesfuly logged in.
 git clone the https://github.com/alexandruburcea/myexpenses-app.git
 npm install
 npm run 
-npm 
+
 
 #Live Enviroment 
 

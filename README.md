@@ -21,7 +21,7 @@ npm
 
 #Live Enviroment 
 
-http://myexpenses.eu
+http://myexpensesapp.eu
 
 • host - Digital Ocean - https://www.digitalocean.com/ 
     linux machine / ubuntu 18 

@@ -17,3 +17,26 @@ More balance / deposit can be entered after succesfuly logged in.
 git clone the https://github.com/alexandruburcea/myexpenses-app.git
 npm install
 npm run 
+npm 
+
+#Live Enviroment 
+
+http://myexpenses.eu
+
+• host - Digital Ocean - https://www.digitalocean.com/ 
+    linux machine / ubuntu 18 
+• domain - GoDaddy  - https://ie.godaddy.com/
+
+#Technologies used
+
+•	
+•  [Node JS] (https://nodejs.org/en/) - Built on
+•  [Passport JS] (http://www.passportjs.org/) - Authentication middleware for Node.js
+•  [Chart JS] (https://www.chartjs.org/) - Charts
+•  [Express](https://expressjs.com/) - Web Framework 
+•  [Ejs](http://ejs.co/) - View engine 
+•  [BCryptJS](https://www.npmjs.com/package/bcryptjs) - Hashing of the passwords
+•  [Mongo DB] (https://www.mongodb.com/) - Database
+•  [jsPDF] - (https://github.com/MrRio/jsPDF) - to convert Canvas to
+•  [HTML2Canvas] - for PDF creation
+•  [JQuery] - (https://api.jquery.com/)- for event handling, animation

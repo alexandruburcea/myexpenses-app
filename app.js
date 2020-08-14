@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
-const port = 80;
+const port = 3000;
 const db = require('./db.js');
 const expenses = require('./controllers/expenses.js');
 const deposits = require('./controllers/deposits.js');
@@ -11,8 +11,8 @@ const bcrypt = require('bcryptjs');
 const LocalStrategy = require('passport-local').Strategy;
 const expressValidator = require('express-validator');
 const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
 var bodyParser = require('body-parser');
+const MongoStore = require('connect-mongo')(session);
 
 app.set('view engine', 'ejs');
 
@@ -85,6 +85,7 @@ app.get('/', function(req, res) {
 				throw err;
 			if (!isEmpty(balance)) {
 				res.render('home', {balance: balance});
+				console.log(balance.total);
 			}
 			else
 				res.redirect('/add-balance');
@@ -107,11 +108,13 @@ function authenticationMiddleware() {
 
 // to test on local devices ( same network)
 
-http.listen(port, 'localhost');  
+// http.listen(80, '46.101.150.226');  
 
-// http.listen(port, function(){
+http.listen(3000, 'localhost');  
+
+
+http.listen(port, function(){
 	console.log(`Listening on port ${port}`);
-// });
+});
 
 
-// 192.168.1.38

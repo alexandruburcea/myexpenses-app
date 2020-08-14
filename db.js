@@ -31,8 +31,6 @@ var userSchema =	new Schema({
 	password:		{type: String, required: true}
 });
 
-console.log(userSchema);
-
 // Balance Schema
 
 var balanceSchema =	new Schema({

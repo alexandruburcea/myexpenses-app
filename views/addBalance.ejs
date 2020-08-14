@@ -1,0 +1,28 @@
+<html>
+<head>
+	<%- include('head'); %>
+</head>
+<body class="bg-color">
+<div class="container">
+<form style="width:80%;margin:0 auto;margin-top:25%" action="/add-balance" method="POST">
+	<div class="form-group">
+		<h1 class="center white montserrat text-shadow-black">Welcome</h1>
+		<div class="alert alert-secondary" role="alert">
+			<h4 class="alert-heading ">Well done, <%= username %>!</h4>
+			<p>You have successfully registered and logged in.</p>
+			<p>My Expenses web application can help you track your daily expenses and keep an eye your balance! 
+				All you have to do is add a name of the expense, choose a category and the amount spent. The application will create beautiful charts to support your daily expenses details. 
+				</p>
+
+			<hr>
+			<p class="mb-0">To start, it is mandatory to add your starting balance!</p>
+		  </div>
+	<h4 class="center white montserrat text-shadow-black">Enter Balance</h4>
+	<input style="width:40%;margin:0 auto;" class="form-control" id="balance" type="number" name="balance" min="0" required>
+	</div>
+	<button class="btn btn-outline-secondary btn-center" type="submit">Submit</button>
+</form>
+</div>
+</body>
+</html>
+
